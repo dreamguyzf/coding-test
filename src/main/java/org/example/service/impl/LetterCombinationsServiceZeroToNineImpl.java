@@ -15,12 +15,12 @@ import java.util.HashMap;
  * @date 2020/9/17
  */
 
-public class LetterCombinationsServiceImpl implements LetterCombinationsService {
+public class LetterCombinationsServiceZeroToNineImpl implements LetterCombinationsService {
     private static class LetterCombinationsAppHolder {
-        private static final LetterCombinationsServiceImpl INSTANCE = new LetterCombinationsServiceImpl();
+        private static final LetterCombinationsServiceZeroToNineImpl INSTANCE = new LetterCombinationsServiceZeroToNineImpl();
     }
-    private LetterCombinationsServiceImpl(){}
-    public static final LetterCombinationsServiceImpl getInstance() {
+    private LetterCombinationsServiceZeroToNineImpl(){}
+    public static final LetterCombinationsServiceZeroToNineImpl getInstance() {
         return LetterCombinationsAppHolder.INSTANCE;
     }
     private final static Map<Integer,String[]> INTEGER_MAP = new HashMap<>();
@@ -47,21 +47,18 @@ public class LetterCombinationsServiceImpl implements LetterCombinationsService 
 
     @Override
     public String getLetterCombinations( Integer[] inputArr) {
-        Integer code = ParamValidateUtil.validation(inputArr);
+        Integer code = ParamValidateUtil.InputZeroToNineValidate(inputArr);
         if(code!=0){
              return AppCodeMessageUtil.getByCode(code);
         }
 
         List<String> letterList = new ArrayList<>();
         try {
-
-
             //The code is used during testing
             while (inputArr[0]==5){
                 AppCodeMessageUtil.getByCode(1);
-                LetterCombinationsServiceImpl.stackOverflow();
+                LetterCombinationsServiceZeroToNineImpl.stackOverflow();
             }
-
             if(inputArr.length==1){
                 letterList = Arrays.asList(INTEGER_MAP.get(inputArr[0]));
             }else if (inputArr.length==2) {

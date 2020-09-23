@@ -9,7 +9,8 @@ package org.example.utils;
 public enum AppCodeMessageUtil {
     SUCCESS(0, "success"),
     EXCEPTION_NULL(-1, "value cannot be null"),
-    EXCEPTION_OUT(-2, "the parameter value must be between 0 and 99");
+    EXCEPTION_OUT_FOR9(-2, "the parameter value must be between 0 and 9"),
+    EXCEPTION_OUT_FOR99(-3, "the parameter value must be between 0 and 99");
 
     private Integer code;
     private String message;

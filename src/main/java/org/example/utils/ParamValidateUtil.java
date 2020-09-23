@@ -8,7 +8,7 @@ package org.example.utils;
 
 
 public  class ParamValidateUtil {
-    public static Integer validation( Integer[] inputArr) {
+    public static Integer InputZeroToNineValidate( Integer[] inputArr) {
         if (inputArr == null || inputArr.length == 0) {
             return -1;
         }
@@ -21,6 +21,25 @@ public  class ParamValidateUtil {
                 return -1;
             } else if (inputArr[k] > 9 || inputArr[k] < 0) {
                 return -2;
+            }
+            k++;
+        }
+        return 0;
+    }
+
+    public static Integer InputZeroToNinetyValidate(Integer[] inputArr){
+        if (inputArr == null || inputArr.length == 0) {
+            return -1;
+        }
+        if (inputArr.length > 4) {
+            return -3;
+        }
+        int k = 0;
+        while (k < inputArr.length) {
+            if (inputArr[k] == null) {
+                return -1;
+            } else if (inputArr[k] > 99 || inputArr[k] < 0) {
+                return -3;
             }
             k++;
         }
